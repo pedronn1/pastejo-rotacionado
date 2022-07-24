@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct Animal {
         char brinco[20];
@@ -7,28 +8,17 @@ struct Animal {
 };
 
 int main(){
-    struct Animal *a;
     int i,n, totalArea = 0;
     float peso,aux,dias;
     int area, areaEscolhida = 0;
     int *b;
 
-    printf("Ola, bem-vindo ao  ");
+    printf("Ola, bem-vindo ao Gerenciamento de Pastejo Rotacionado\n");
 
-    printf("Quantas areas voce possui? ");
+    printf("\nQuantas areas de pastejo voce possui? ");
     scanf("%d", &totalArea);
 
-    b = malloc(sizeof(int) * totalArea);
-
-    for( i = 0 ; i < n ; i++ )
-        b[i] = 0; // zera as areas
-
-    for(i = 0; i < totalArea; i++){
-        printf("Qual o GMD da area %d? ", i+1);
-        scanf("%d", &b[i]);
-    }
-
-    printf("\nQuantos animais deseja rotacionar? ");
+    printf("Quantos animais deseja rotacionar? ");
     scanf("%d", &n);
 
     while(n > 10 * totalArea){
@@ -36,16 +26,28 @@ int main(){
         scanf("%d", &n);
     }
 
-    a = malloc( sizeof(struct Animal) * n);
+    struct Animal *a = malloc( sizeof(struct Animal) * n);
+
+    b = malloc(sizeof(int) * totalArea);
 
     for( i = 0 ; i < n ; i++ )
         a[i].peso = 0; // zera todos os pesos
 
+    for( i = 0 ; i < n ; i++ )
+        b[i] = 0; // zera as areas
+
     for(i = 0; i < n; i++){
-        printf("Digite o codigo do brinco do animal %d: ", i+1);
+        printf("\nDigite o codigo do brinco do animal %d: ", i+1);
         scanf("%s", a[i].brinco);
         printf("Digite o peso do animal de brinco '%s': ",a[i].brinco);
         scanf("%f", &a[i].peso);
+    }
+
+    printf("\n");
+
+    for(i = 0; i < totalArea; i++){
+        printf("Qual o GMD da area %d? ", i+1);
+        scanf("%d", &b[i]);
     }
 
     for(i = 0; i < n; i++){
@@ -53,16 +55,16 @@ int main(){
         areaEscolhida = 0;
 
         while(areaEscolhida != -1){
-            printf("\nDeseja movimentar o animal de brinco %s para que Area ( Ex: 1)?  (Digite '-1' para simular o proximo boi)? ", a[i].brinco);
+            printf("\nDeseja movimentar o animal de brinco %s para que Area (Ex: 1)?  (Digite '-1' para simular o proximo boi)? ", a[i].brinco);
             scanf(" %d", &areaEscolhida);
 
             if(areaEscolhida != -1){
-            printf("Deseja que o animal %s fique por quantos dias na area %d?: ", a[i].brinco, areaEscolhida);
+            printf("\nDeseja que o animal %s fique por quantos dias na area %d?: ", a[i].brinco, areaEscolhida);
             scanf("%f", &dias);
 
             a[i].peso += (dias * b[areaEscolhida-1]);
 
-            printf("O animal ficara com %f kg\n", a[i].peso);
+            printf("O animal ficara com %f kg", a[i].peso);
             }
         }
     }
@@ -73,15 +75,14 @@ int main(){
 		printf("(%s, %.2f kg)\n", a[i].brinco, a[i].peso);
 	}
 
-	printf("\nEncerrando programa...");
-	printf("Obrigado e volte sempre!");
-
         free( a );
         free( b );
 
         return 0;
 
 }
+
+
 
 
 
