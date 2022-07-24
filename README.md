@@ -1,14 +1,12 @@
 # pastejo-rotacionado
 Olá, fiz este desafio em C que consiste em calcular qual será o peso do animal final ao ele ser rotacionado em diferentes áreas de pastoreio por tantos dias.
 
-Para rodar o programa eu aconselho baixar o CodeBlocks pois possui suas bibliotecas atualizadas, abra o arquivo por ele ou simplesmente crie um arquivo novo e copie e cole o código. Testei o código em alguns compiladores em C online, porém não obtive sucesso, pesquisei um pouco e vi que poderia ser por conta das bibliotecas desatualizadas dos sites.
-Caso tenha um compilador em C fique a vontade para usar como o dev++ ou o próprio Visual Studio Code, mas para o VS precisa incrementar o gcc, que fica um pouco mais complicado.
+Para rodar o programa basta clicar no link abaixo que levará diretamente ao compilador online em C.
 
-Segue link do CodeBlocks para baixar:
-https://www.codeblocks.org/downloads/
+No console site aperte em "run", logo ems eguida abaixo do compilador de as suas entradas conforme requisitado pelo código!
 
-Basta baixar a binary realese e escolher o seu sistema operacional.
+Link com o código já colado:
+https://www.onlinegdb.com/qqmvnW1Ag
 
-Caso tenha alguns problema este é um link tutorial para baixar o CodeBlocks:
-https://www.youtube.com/watch?v=oVZotygd5PM
-
+Caso o link não funcione entre neste link do compilador online em C, copie e cole o código:
+https://www.onlinegdb.com/online_c_compiler
